@@ -1,0 +1,113 @@
+public class Sorts{
+
+  // These are kinds of sorts
+   public static void main(String[] args){
+      int[] arr = {8,9,3,4,5,1};
+      arr = SelSort(arr);
+      System.out.print("Selection Sort = ");
+      printSortSel(arr);
+      int[] arrOne = {5,9,12,4,6,7,77};
+      arrOne = insort(arrOne);
+      System.out.print("Insertion Sort = "); 
+      printSortIns(arrOne);
+      int[] arrTwo = {1,7,3,5,6,9};
+      arrTwo = MergeSortV2(arrTwo);
+      System.out.print("merge sort= ");
+      MergeSort(arrTwo);
+   
+   }
+   public static int[] MergeSortV2(int[] arrTwo, int[][] newReturnArray){
+if(arrTwo.length == 1)
+   return arrTwo;
+      else{
+         int[][] array = splitit(arrTwo);
+         int[] left = newReturnArray(array[0]);        
+         int[] right = newReturnArray(array[1]); 
+         return combine(left, right, PutAll); 
+          }
+
+}
+  
+      
+  
+
+  public static int[] combine(int[] left, int[] right, int[] PutAll ){
+       return 
+   }
+
+
+   public static int[] splitit(int[] arr){
+      int[] FirstArr = new int[arrTwo.length/2];
+      int[] SeccondArr = new int[arrTwo.length-Firstarr.length];
+      int c = 0;
+      
+      for(int i = 0;i<arrTwo.length/2; i++){
+         FirstArr[c] = arrTwo[i];      
+         c++;
+      }
+      for(int i = 0;i<arrTwo.length/2; i++){
+         SeccondArr[c] = arrTwo[i]; 
+         c++;     
+      }
+      int[][] newReturnArray = {FirstArr, SeccondArr};
+      return newReturnArray;
+      
+      }
+
+   
+   public static int[] SelSort(int[] arr){
+      int small = 0;
+      for(int i = 0; i<arr.length-1; i++){
+         small = i;
+         for(int j = i+1; j<arr.length; j++){
+            if(arr[small] > arr[j]){
+                small=j;
+            }
+                       
+         int temp = arr[small];
+         arr[small] = arr[i];
+         arr[i] = temp;
+      }  }   
+      
+      return arr;
+   }
+      
+   public static int[] insort(int[] arrOne){
+      for(int i=1; i<arrOne.length; i++){          
+          for(int j = i;j>0;j--){
+            if(arrOne[j]<arrOne[j-1]){
+               int t = arrOne[j];
+               arrOne[j] = arrOne[j-1];
+               arrOne[j-1] = t;
+            }
+         }
+      }             
+      
+      return arrOne;
+   }
+      
+   public static void printSortSel(int[] arr){
+      for(int t = 0; t<arr.length; t++){
+         System.out.print(arr[t]+", ");
+      }
+      System.out.println();
+   
+   }
+   public static void printSortIns(int[] arrOne){
+      for(int t = 0; t<arrOne.length; t++){
+         System.out.print(arrOne[t]+", ");
+      }
+      System.out.println();
+   
+   }
+   
+   public static void printSortMerg(int[] arrTwo){
+      for(int t = 0; t<arrOne.length; t++){
+         System.out.print(arrOne[t]+", ");
+      }
+      System.out.println();
+   }
+   
+   
+   
+}   
